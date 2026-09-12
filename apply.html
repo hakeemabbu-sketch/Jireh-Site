@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Request a Standing Position — Jireh Strategies</title>
+<meta name="description" content="One organization at a time. Tell us what you hold and what you would build if the capital existed. Reviewed personally by Hakeem Abbu.">
+<meta name="robots" content="noindex,follow">
+<link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="./assets/css/system.css">
+<style>
+  .applyGrid{display:grid;grid-template-columns:1.35fr .9fr;gap:clamp(26px,4vw,58px);align-items:start}
+  @media(max-width:920px){.applyGrid{grid-template-columns:1fr}.sideRail{position:static!important;order:-1}}
+  .sideRail{position:sticky;top:96px}
+  .fieldset{border:0;padding:0;margin:0 0 clamp(30px,4vw,44px)}
+  .fieldset > legend{font-family:var(--serif);font-size:22px;color:var(--navy);padding:0;margin-bottom:6px}
+  .fieldset .lg{font-size:14.5px;color:var(--ink-soft);margin-bottom:24px}
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  @media(max-width:600px){.two{grid-template-columns:1fr}}
+  .scoreCard{background:var(--navy);color:#fff;border-radius:3px;padding:26px;margin-bottom:20px}
+  .scoreCard .big{font-family:var(--serif);font-size:52px;color:var(--gold);line-height:1}
+  #sendState{display:none;padding:15px 18px;border-radius:2px;font-size:15px;margin-top:18px;line-height:1.55}
+  #sendState.ok{display:block;background:rgba(47,122,85,.12);border:1px solid rgba(47,122,85,.4);color:#1F5A3C}
+  #sendState.bad{display:block;background:rgba(168,52,31,.10);border:1px solid rgba(168,52,31,.4);color:#8A2A19}
+  #sendState.busy{display:block;background:rgba(191,157,73,.12);border:1px solid var(--gold-dim);color:#7A6323}
+  .done{text-align:center;padding:clamp(34px,5vw,58px) 0}
+  .done .tick{width:70px;height:70px;border-radius:50%;background:var(--gold);color:var(--navy-deep);display:grid;place-content:center;font-size:34px;margin:0 auto 24px}
+</style>
+</head>
+<body>
+<header class="masthead">
+  <div class="wrap in">
+    <a class="logo" href="./index.html">Jireh Strategies<small>The Accelerator</small></a>
+    <nav class="navlinks">
+      <a href="./index.html#problem">The Problem</a>
+      <a href="./index.html#product">The Product</a>
+      <a href="./offer.html">The Partnership</a>
+      <a class="btn btn-gold" href="./diagnostic.html">Begin the Diagnostic</a>
+    </nav>
+  </div>
+</header>
+
+
+<section style="padding-block:clamp(34px,5vw,56px)">
+  <div class="wrap">
+    <div id="applyWrap">
+      <div style="max-width:66ch;margin-bottom:clamp(28px,4vw,46px)">
+        <span class="eyebrow eyebrow--ink">One organization at a time</span>
+        <h1 style="font-size:clamp(31px,4.8vw,50px)">Request a standing position.</h1>
+        <p class="lede">
+          This is not a contact form and it is not a mailing list. It is an application for one retained annual
+          partnership, reviewed personally. Tell us what you hold and what you would build if the capital existed.
+        </p>
+      </div>
+
+      <div class="applyGrid">
+        <form id="applyForm" novalidate>
+          <div class="hp"><label>Leave this blank<input type="text" name="website_url" tabindex="-1" autocomplete="off"></label></div>
+
+          <fieldset class="fieldset">
+            <legend>Who you are</legend>
+            <p class="lg">The conversation is with a decision maker, so this matters more than it looks.</p>
+            <div class="two">
+              <div class="field"><label for="f_name">Your name</label><input id="f_name" name="name" type="text" autocomplete="name" required><p class="err">Please tell us your name.</p></div>
+              <div class="field"><label for="f_role">Your role</label><input id="f_role" name="role" type="text" autocomplete="organization-title" placeholder="Executive Director, Pastor, Board Chair"></div>
+            </div>
+            <div class="two">
+              <div class="field"><label for="f_email">Email</label><input id="f_email" name="email" type="email" autocomplete="email" required><p class="err">A valid email is required so we can reply.</p></div>
+              <div class="field"><label for="f_phone">Phone <span style="text-transform:none;letter-spacing:0;font-weight:400;color:var(--ink-soft)">(optional)</span></label><input id="f_phone" name="phone" type="tel" autocomplete="tel"></div>
+            </div>
+          </fieldset>
+
+          <fieldset class="fieldset">
+            <legend>The organization</legend>
+            <p class="lg">The incubator. The place that already holds the housing, the staff and the trust.</p>
+            <div class="field"><label for="f_org">Organization name</label><input id="f_org" name="orgName" type="text" autocomplete="organization" required><p class="err">Please tell us the organization's name.</p></div>
+            <div class="two">
+              <div class="field"><label for="f_loc">City &amp; state</label><input id="f_loc" name="location" type="text" placeholder="Dallas, TX"></div>
+              <div class="field"><label for="f_web">Website <span style="text-transform:none;letter-spacing:0;font-weight:400;color:var(--ink-soft)">(optional)</span></label><input id="f_web" name="website" type="text" placeholder="example.org"></div>
+            </div>
+            <div class="two">
+              <div class="field"><label for="f_cat">What kind of organization</label><select id="f_cat" name="category"><option value="">Select one</option></select></div>
+              <div class="field"><label for="f_budget">Annual operating budget</label><select id="f_budget" name="annualBudget">
+                <option value="">Select one</option>
+                <option>Under $250,000</option><option>$250,000 – $1M</option><option>$1M – $5M</option>
+                <option>$5M – $20M</option><option>Over $20M</option><option>Prefer not to say</option>
+              </select></div>
+            </div>
+          </fieldset>
+
+          <fieldset class="fieldset">
+            <legend>What the capital is for</legend>
+            <p class="lg">Answer these the way you would say them out loud. Nobody is scoring the grammar.</p>
+            <div class="two">
+              <div class="field"><label for="f_gap">The capital gap</label><select id="f_gap" name="capitalGap">
+                <option value="">Select one</option>
+                <option>Under $100,000</option><option>$100,000 – $500,000</option>
+                <option>$500,000 – $2M</option><option>Over $2M</option>
+                <option>We do not have a number yet</option>
+              </select></div>
+              <div class="field"><label for="f_time">When you want this resolved</label><select id="f_time" name="timeline">
+                <option value="">Select one</option>
+                <option>Immediately — a deadline or opportunity is closing</option>
+                <option>This quarter</option><option>Within the fiscal year</option><option>Exploring for now</option>
+              </select></div>
+            </div>
+            <div class="field">
+              <label for="f_build">What would you build right now if the capital existed?</label>
+              <p class="hint">A facility. Staff you cannot afford. A second site. The thing you have been carrying for years.</p>
+              <textarea id="f_build" name="whatWouldYouBuild" required></textarea>
+              <p class="err">This is the most important answer on the page. Please tell us.</p>
+            </div>
+            <div class="field">
+              <label for="f_block">What has stopped it so far?</label>
+              <p class="hint">Be blunt. Nothing here is graded, and the honest answer is the useful one.</p>
+              <textarea id="f_block" name="biggestObstacle"></textarea>
+            </div>
+          </fieldset>
+
+          <div class="field">
+            <label class="opt" style="text-transform:none;letter-spacing:0;font-weight:400">
+              <input type="checkbox" id="f_consent" name="consent" required>
+              <span>I would like Hakeem Abbu to review this and respond directly. My information will not be sold, shared or added to any list I did not ask for.</span>
+            </label>
+            <p class="err" id="consentErr">Please confirm before sending.</p>
+          </div>
+
+          <button type="submit" class="btn btn-gold" id="btnSend" style="width:100%;justify-content:center">Send my application &rarr;</button>
+          <div id="sendState"></div>
+          <p class="small center mt-s">Reviewed personally. You will hear back from a person, not an autoresponder.</p>
+        </form>
+
+        <aside class="sideRail">
+          <div id="scoreRail" class="scoreCard hidden">
+            <span class="eyebrow" style="margin-bottom:8px">Your diagnostic is attached</span>
+            <div class="big" id="railScore">0</div>
+            <p style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#93A5C0;font-weight:650;margin:6px 0 16px">Capital Readiness Score</p>
+            <p style="font-size:15px;color:#DCE4EF;margin:0" id="railBand"></p>
+            <hr class="rule" style="margin:18px 0;background:rgba(191,157,73,.24)">
+            <p class="small mb0" style="color:#8FA0BB">Your fourteen answers travel with this application, so the first conversation starts where the diagnostic left off rather than at the beginning.</p>
+          </div>
+
+          <div class="card card--flag">
+            <span class="sub">What you are applying for</span>
+            <h3 style="margin-bottom:.3em" id="railOfferName">The Capital Partnership</h3>
+            <p style="font-family:var(--serif);font-size:38px;color:var(--navy);line-height:1;margin:6px 0 4px" id="railPrice">$28,000</p>
+            <p class="small" style="margin-bottom:18px">Annually · One organization · One standing position</p>
+            <ul style="list-style:none;padding:0;margin:0;display:grid;gap:9px" id="railIncludes"></ul>
+          </div>
+
+          <div class="card mt-s">
+            <span class="sub">What happens next</span>
+            <ol style="padding-left:18px;margin:0;font-size:14.5px;line-height:1.62;color:var(--ink-soft)">
+              <li style="margin-bottom:9px">Your application arrives with your diagnostic attached and is read personally.</li>
+              <li style="margin-bottom:9px">If there is a fit, you will hear back with a time to talk — not a proposal to review.</li>
+              <li>That first conversation is indistinguishable from the first hour of the engagement. You will get value from it whether or not anything follows.</li>
+            </ol>
+          </div>
+        </aside>
+      </div>
+    </div>
+
+    <div id="doneWrap" class="hidden">
+      <div class="done wrap-narrow">
+        <div class="tick">&#10003;</div>
+        <span class="eyebrow eyebrow--ink">Received</span>
+        <h1 style="font-size:clamp(30px,4.4vw,46px)">Thank you. This is now in front of a person.</h1>
+        <p class="lede" id="doneLede">Your application has been received and flagged for personal review.</p>
+        <div class="card mt-m" style="text-align:left">
+          <span class="sub">What was sent</span>
+          <div id="doneSummary"></div>
+        </div>
+        <p class="mt-m" style="font-family:var(--serif);font-size:21px;color:var(--navy);max-width:52ch;margin-inline:auto">
+          We are deeply grateful for the seriousness you have brought to this. Whatever follows, the assets you named are real, and they were always there.
+        </p>
+        <p class="eyebrow eyebrow--ink mt-m">Soli Deo Gloria</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="grid g3" style="align-items:start">
+      <div>
+        <div class="logo" style="margin-bottom:12px">Jireh Strategies<small>The Multiplication of Community Assets</small></div>
+        <p class="small" style="max-width:34ch">The accelerator of the community asset incubator. Capital is not scarce in this country. Translation is.</p>
+      </div>
+      <div>
+        <p class="eyebrow" style="margin-bottom:12px">Navigate</p>
+        <p class="small" style="line-height:2">
+          <a href="./index.html">The Thesis</a><br>
+          <a href="./diagnostic.html">Capital Readiness Diagnostic</a><br>
+          <a href="./offer.html">The Capital Partnership</a><br>
+          <a href="./apply.html">Request a Standing Position</a>
+        </p>
+      </div>
+      <div>
+        <p class="eyebrow" style="margin-bottom:12px">Principal</p>
+        <p class="small" style="line-height:1.85">
+          Hakeem Abbu<br>
+          Owner &amp; Principal, Jireh Strategies<br>
+          Development Director,<br>Adult &amp; Teen Challenge Dallas
+        </p>
+      </div>
+    </div>
+    <hr class="rule" style="margin:36px 0 22px;background:rgba(191,157,73,.2)">
+    <div style="display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;align-items:center">
+      <span class="small">&copy; MMXXVI Jireh Strategies. Prepared by Hakeem Abbu.</span>
+      <span class="sdg">Soli Deo Gloria</span>
+    </div>
+  </div>
+</footer>
+
+<script src="./assets/js/canon.js"></script>
+<script src="./assets/js/diagnostic-data.js"></script>
+<script src="./assets/js/scoring.js"></script>
+<script src="./assets/js/relay.js"></script>
+<script src="./assets/js/apply.js"></script>
+</body>
+</html>

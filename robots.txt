@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /crm/
+
+Sitemap: https://hakeemabbu-sketch.github.io/Jireh-Site/sitemap.xml
