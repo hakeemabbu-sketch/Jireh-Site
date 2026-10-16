@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /request-received/
+
+Sitemap: https://hakeemabbu-sketch.github.io/Jireh-Site/printingmoney/sitemap.xml
